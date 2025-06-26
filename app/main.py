@@ -11,13 +11,11 @@ class Animal:
         print(f"Hello, I'm {self.name}")
 
     def feed(self) -> int:
-        food_points = 0
         if self.is_hungry:
-            print(f"Eating {self.appetite} food points...")
             self.is_hungry = False
-            food_points = self.appetite
-        return food_points
-
+            print(f"Eating {self.appetite} food points...")
+            return self.appetite
+        return 0
 
 class Cat(Animal):
     def __init__(self, name: str, is_hungry: bool = True) -> None:
